@@ -1,0 +1,511 @@
+:root {
+  --ink: #2e2927;
+  --muted: #857974;
+  --paper: #f6f1eb;
+  --line: #dfd5cc;
+  --orange: #bd6545;
+  --cream: #e9d7c5;
+}
+.storefront {
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--paper);
+}
+.announcement {
+  background: var(--ink);
+  color: #f8f0e8;
+  padding: 10px 5vw;
+  text-align: center;
+  font:
+    10px "DM Mono",
+    monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.announcement span {
+  color: #e29a78;
+  margin: 0 12px;
+}
+.site-header {
+  height: 88px;
+  padding: 0 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+.wordmark {
+  font:
+    600 28px "Playfair Display",
+    serif;
+  letter-spacing: -0.05em;
+}
+.wordmark span {
+  color: var(--orange);
+}
+.main-nav {
+  display: flex;
+  gap: 34px;
+  margin-left: 9%;
+  font-size: 12px;
+  color: var(--muted);
+}
+.main-nav a:hover,
+.text-link:hover {
+  color: var(--orange);
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 12px;
+}
+.icon-button,
+.login-button,
+.bag-button {
+  border: 0;
+  background: none;
+  color: var(--ink);
+  padding: 4px 0;
+}
+.icon-button {
+  font-size: 26px;
+  line-height: 1;
+  transform: rotate(-20deg);
+}
+.login-button {
+  border-bottom: 1px solid var(--ink);
+}
+.bag-button span {
+  color: var(--orange);
+  margin-left: 4px;
+}
+.hero {
+  min-height: 620px;
+  display: grid;
+  grid-template-columns: 46% 54%;
+  border-bottom: 1px solid var(--line);
+}
+.hero-copy {
+  padding: 130px 6vw 80px;
+  position: relative;
+  z-index: 1;
+}
+.eyebrow {
+  margin: 0 0 20px;
+  color: var(--orange);
+  font:
+    10px "DM Mono",
+    monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+h1,
+h2 {
+  margin: 0;
+  font:
+    500 clamp(54px, 6vw, 88px)/0.94 "Playfair Display",
+    serif;
+  letter-spacing: -0.055em;
+}
+h1 em,
+h2 em {
+  color: var(--orange);
+  font-weight: 500;
+}
+.hero-description {
+  max-width: 300px;
+  margin: 32px 0 36px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.text-link {
+  display: inline-flex;
+  gap: 14px;
+  align-items: center;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 8px;
+  font-size: 12px;
+}
+.text-link span,
+.dark-button span {
+  color: var(--orange);
+  font-size: 18px;
+}
+.hero-art {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+  background: #d6a789;
+}
+.hero-art:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(125deg, rgba(244, 210, 181, 0.5), transparent 44%),
+    repeating-linear-gradient(
+      100deg,
+      transparent 0 48px,
+      rgba(117, 70, 47, 0.04) 49px 50px
+    );
+}
+.sun-disc {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: #e8c5aa;
+  top: 86px;
+  left: 20%;
+}
+.pedestal {
+  position: absolute;
+  width: 76%;
+  height: 90px;
+  bottom: 93px;
+  left: 12%;
+  background: #c88666;
+  border-radius: 50% 50% 5px 5px;
+  box-shadow: 0 -12px 0 rgba(176, 103, 75, 0.32);
+}
+.bottle-shadow {
+  position: absolute;
+  width: 245px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(82, 45, 32, 0.24);
+  bottom: 168px;
+  left: 31%;
+  filter: blur(8px);
+}
+.perfume-bottle {
+  position: absolute;
+  z-index: 2;
+  width: 146px;
+  height: 200px;
+  bottom: 155px;
+  left: 39%;
+  background: linear-gradient(110deg, #e6a27f, #9d4d38 85%);
+  border-radius: 9px 9px 18px 18px;
+  box-shadow:
+    inset 10px 0 22px rgba(255, 239, 217, 0.2),
+    12px 14px 25px rgba(92, 48, 37, 0.18);
+}
+.bottle-cap {
+  width: 76px;
+  height: 32px;
+  position: absolute;
+  top: -30px;
+  left: 35px;
+  background: #5a3830;
+  border-radius: 4px 4px 1px 1px;
+  box-shadow: inset 9px 0 rgba(255, 255, 255, 0.1);
+}
+.bottle-label {
+  position: absolute;
+  inset: 65px 16px auto;
+  padding: 14px 5px;
+  color: #f8e7d9;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  text-align: center;
+  font:
+    9px "DM Mono",
+    monospace;
+  letter-spacing: 0.12em;
+  line-height: 1.7;
+}
+.bottle-label strong {
+  font-size: 11px;
+}
+.hero-note {
+  position: absolute;
+  right: 28px;
+  bottom: 22px;
+  margin: 0;
+  color: #794b3c;
+  font:
+    10px "DM Mono",
+    monospace;
+}
+.catalog-section {
+  padding: 100px 5vw 115px;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 42px;
+}
+h2 {
+  font-size: 52px;
+}
+.section-heading .eyebrow {
+  margin-bottom: 13px;
+}
+.section-count {
+  color: var(--muted);
+  font:
+    10px "DM Mono",
+    monospace;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.product-image {
+  position: relative;
+  aspect-ratio: 1 / 1.1;
+  display: grid;
+  place-items: center;
+  background: #eadfd5;
+  overflow: hidden;
+}
+.product-image:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.4),
+    transparent 40%
+  );
+  pointer-events: none;
+}
+.product-image img {
+  width: 76%;
+  height: 76%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.4s ease;
+}
+.product-card:hover img {
+  transform: scale(1.06);
+}
+.product-tag {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  z-index: 1;
+  padding: 5px 8px;
+  color: #754838;
+  background: #f4e6da;
+  font:
+    9px "DM Mono",
+    monospace;
+  text-transform: uppercase;
+}
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 17px;
+}
+.product-info h3 {
+  margin: 0 0 5px;
+  font:
+    500 15px "Playfair Display",
+    serif;
+}
+.product-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+.product-info strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+.rating {
+  margin-top: 12px;
+  color: var(--orange);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.rating span {
+  color: var(--muted);
+  letter-spacing: 0;
+  margin-left: 7px;
+}
+.catalog-state {
+  padding: 80px 0;
+  color: var(--muted);
+  font:
+    12px "DM Mono",
+    monospace;
+}
+.offer-band {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: end;
+  padding: 76px 5vw;
+  background: var(--cream);
+}
+.offer-band h2 {
+  font-size: 50px;
+}
+.offer-band > p {
+  max-width: 250px;
+  color: #725c52;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0;
+}
+.dark-button {
+  border: 0;
+  padding: 15px 18px;
+  background: var(--ink);
+  color: #f9efe8;
+  text-align: left;
+  font-size: 11px;
+}
+.dark-button span {
+  float: right;
+  margin-left: 25px;
+}
+.dark-button:hover {
+  background: var(--orange);
+}
+.site-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  align-items: center;
+  gap: 30px;
+  padding: 55px 5vw;
+  background: var(--ink);
+  color: #f6e9df;
+}
+.site-footer p {
+  color: #a99b93;
+  font-size: 11px;
+}
+.footer-search label {
+  display: block;
+  color: #a99b93;
+  font:
+    9px "DM Mono",
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+.footer-search input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #655851;
+  outline: 0;
+  padding: 8px 0;
+  background: transparent;
+  color: white;
+  font-size: 12px;
+}
+.footer-search input::placeholder {
+  color: #84756d;
+}
+.auth-page {
+  min-height: 100vh;
+  padding: 40px 6vw;
+  background: var(--paper);
+}
+.back-button {
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 12px;
+}
+.auth-box {
+  width: min(100%, 420px);
+  margin: 15vh auto;
+}
+.auth-box h1 {
+  font-size: 58px;
+  margin-bottom: 40px;
+}
+.auth-box input {
+  display: block;
+  width: 100%;
+  margin: 14px 0;
+  padding: 16px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  outline: 0;
+  background: transparent;
+}
+.auth-box .dark-button {
+  width: 100%;
+  margin-top: 28px;
+}
+@media (max-width: 720px) {
+  .site-header {
+    height: 72px;
+  }
+  .main-nav {
+    display: none;
+  }
+  .header-actions {
+    gap: 14px;
+  }
+  .hero {
+    display: block;
+  }
+  .hero-copy {
+    padding: 82px 9vw 70px;
+  }
+  .hero-art {
+    min-height: 430px;
+  }
+  .sun-disc {
+    width: 280px;
+    height: 280px;
+    top: 45px;
+    left: 18%;
+  }
+  .perfume-bottle {
+    transform: scale(0.8);
+    transform-origin: bottom;
+    left: 34%;
+    bottom: 118px;
+  }
+  .pedestal {
+    bottom: 66px;
+  }
+  .bottle-shadow {
+    bottom: 135px;
+  }
+  .hero-note {
+    bottom: 13px;
+  }
+  .catalog-section {
+    padding: 70px 7vw 75px;
+  }
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 12px;
+  }
+  .product-info {
+    display: block;
+  }
+  .product-info strong {
+    display: block;
+    margin-top: 9px;
+  }
+  .offer-band {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 60px 7vw;
+  }
+  .site-footer {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .auth-box {
+    margin-top: 18vh;
+  }
+  .auth-box h1 {
+    font-size: 48px;
+  }
+}
