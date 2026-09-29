@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
-import MainHeader from './components/main_header'
-import { navigateToLogin, navigateToRegister } from './router'
-import OfferRibbon from './components/offer_ribbon'
-import MainPageCarrousel from './components/main_page_carrousel'
+import MainHeader from '../components/main_header'
+import { navigateToLogin, navigateToRegister } from '../../router'
+import OfferRibbon from '../components/offer_ribbon'
+import MainPageCarrousel from '../components/main_page_carrousel'
 
 type Product = {
 	id: number

@@ -2,6 +2,7 @@ import './App.css'
 import { useEffect, useState } from 'react'
 import { getPageFromRoute } from './router'
 
+
 function App() {
   const [pathname, setPathname] = useState(window.location.pathname)
 
