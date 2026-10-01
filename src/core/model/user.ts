@@ -3,4 +3,5 @@ export default interface UserModel {
 	name: string;
 	email: string;
 	phone: string;
+	role: 'customer' | 'employee' | 'admin' | 'owner' | 'developer';
 }

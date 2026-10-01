@@ -1,5 +1,5 @@
 import { apiBaseUrl } from "../../api_base";
-import authServiceInstance from "../../../presentation/auth/auth_service";
+import authServiceInstance from "../../../../presentation/auth/auth_service";
 
 interface NewAddressEndpointProps {
 	addressName: string;

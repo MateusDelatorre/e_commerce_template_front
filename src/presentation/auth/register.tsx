@@ -1,3 +1,3 @@
 export default function RegisterPage({ onBack }: { onBack: () => void }) {
-  return <div className="auth-page"><button className="back-button" onClick={onBack}>← Back to store</button><div className="auth-box"><p className="eyebrow">Join the ritual</p><h1>Create your account.</h1><input placeholder="Full name" /><input placeholder="Email address" type="email" /><input placeholder="Password" type="password" /><button className="dark-button">Create account <span>↗</span></button></div></div>
+  return <div className="auth-page"><button className="back-button" onClick={onBack}>← Voltar à loja</button><div className="auth-box"><p className="eyebrow">Faça parte do ritual</p><h1>Crie sua conta.</h1><input placeholder="Nome completo" /><input placeholder="E-mail" type="email" /><input placeholder="Senha" type="password" /><button className="dark-button">Criar conta <span>↗</span></button></div></div>
 }

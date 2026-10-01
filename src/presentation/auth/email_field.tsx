@@ -2,10 +2,10 @@ export default function EmailField() {
 
   return (
 	<>
-		<label htmlFor="email">Enter email</label>
+		<label htmlFor="email">Digite seu e-mail</label>
 		<input
 			id="email"
-			placeholder="Email address"
+			placeholder="E-mail"
 			type="email"
 			autoComplete="email"
 		/>

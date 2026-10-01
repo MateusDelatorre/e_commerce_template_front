@@ -1,4 +1,4 @@
-import authServiceInstance from "../presentation/auth/auth_service";
+import authServiceInstance from "../../presentation/auth/auth_service";
 import { apiBaseUrl } from "./api_base";
 
 export function login(email: string, password: string){
@@ -19,7 +19,7 @@ function apiLogin(email: string, password: string) {
 		return response.json().then((data) => {
 			if (!response.ok) {
 				console.error('Login failed', data)
-				throw new Error(data.message ?? 'Login failed')
+				throw new Error(data.message ?? 'Não foi possível entrar')
 			}
 			authServiceInstance.setToken(data.token)
 			return data

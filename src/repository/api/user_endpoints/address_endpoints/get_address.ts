@@ -1,6 +1,6 @@
-import authServiceInstance from "../../../presentation/auth/auth_service";
+import authServiceInstance from "../../../../presentation/auth/auth_service";
 import { apiBaseUrl } from "../../api_base";
-import ErrorMatcher from "../../error/error_matcher";
+import ErrorMatcher from "../../../error/error_matcher";
 
 export default function getAddress() {
 

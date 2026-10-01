@@ -1,8 +1,8 @@
 export default function OfferRibbon(){
 	return(
 		<div className="announcement">
-			Complimentary shipping on orders over $75 <span>•</span>
-			 Curated for every mood
+			Frete grátis em pedidos acima de 75 R$ <span>•</span>
+				Selecionado para cada momento
 		</div>
 	)
 }

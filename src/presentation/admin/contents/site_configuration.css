@@ -1,0 +1,13 @@
+.site-configuration { max-width: 760px; }
+.site-configuration h2 { max-width: 700px; margin: 18px 0 0; font-size: clamp(42px, 5.5vw, 76px); line-height: 1.02; letter-spacing: -.06em; }
+.site-configuration-copy { max-width: 520px; margin: 22px 0 0; color: var(--admin-muted); font-size: 13px; line-height: 1.7; }
+.site-configuration-form { display: grid; gap: 20px; max-width: 560px; margin-top: 50px; padding: 26px; border: 1px solid var(--admin-line); border-radius: 8px; background: var(--admin-surface); }
+.site-configuration-form label { display: grid; gap: 8px; color: var(--admin-muted); font-size: 11px; }
+.site-configuration-form input { width: 100%; padding: 12px; border: 1px solid var(--admin-line); border-radius: 5px; background: var(--admin-paper); color: var(--admin-ink); font-size: 13px; }
+.site-configuration-form input:focus { border-color: var(--admin-accent); outline: 2px solid var(--admin-accent-soft); }
+.site-configuration-actions { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 6px; }
+.site-configuration-button { padding: 12px 16px; border: 0; border-radius: 5px; background: var(--admin-accent); color: #fff; cursor: pointer; font-size: 12px; font-weight: 700; }
+.site-configuration-button:disabled { cursor: wait; opacity: .55; }
+.site-configuration-feedback { margin: 0; color: #278b68; font-size: 12px; }
+.site-configuration-error { margin: 0; color: #b14b4b; font-size: 12px; }
+.site-configuration-loading { margin-top: 50px; color: var(--admin-muted); font-size: 13px; }

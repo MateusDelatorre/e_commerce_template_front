@@ -1,0 +1,45 @@
+.checkout-page { min-height: 100vh; background: var(--paper); color: var(--ink); }
+.checkout-shell { display: grid; grid-template-columns: minmax(260px, .7fr) minmax(0, 1.3fr); gap: clamp(50px, 9vw, 140px); max-width: 1120px; margin: 0 auto; padding: 82px 5vw 120px; }
+.checkout-heading h1, .checkout-success h1 { margin: 0; font-size: clamp(56px, 7vw, 96px); line-height: .88; }
+.checkout-heading .eyebrow, .checkout-success .eyebrow { margin-bottom: 22px; }
+.checkout-form { display: grid; gap: 38px; }
+.checkout-section { padding-bottom: 34px; border-bottom: 1px solid var(--line); }
+.checkout-section-heading { display: flex; gap: 18px; align-items: start; }
+.checkout-section-heading > span { color: var(--orange); font: 10px "DM Mono", monospace; }
+.checkout-section-heading h2 { margin: 0; font-size: 24px; letter-spacing: -.04em; }
+.checkout-section-heading p { margin: 8px 0 0; color: var(--muted); font-size: 12px; }
+.checkout-addresses, .checkout-payments { display: grid; gap: 10px; margin: 25px 0 0 30px; }
+.checkout-address, .checkout-payment { display: flex; align-items: center; gap: 14px; padding: 16px; border: 1px solid var(--line); background: rgba(255,255,255,.22); cursor: pointer; }
+.checkout-address.selected, .checkout-payment.selected { border-color: var(--orange); background: #f1e1d5; }
+.checkout-address input, .checkout-payment input { accent-color: var(--orange); }
+.checkout-address span, .checkout-payment span { display: grid; gap: 6px; }
+.checkout-address strong, .checkout-payment strong { font-size: 13px; font-weight: 600; }
+.checkout-address small, .checkout-payment small { color: var(--muted); font-size: 11px; }
+.checkout-add-address { justify-self: start; padding: 8px 0; border: 0; border-bottom: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; font-size: 11px; }
+.checkout-add-address:hover { color: var(--orange); border-color: var(--orange); }
+.checkout-review { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+.checkout-review > div { display: grid; gap: 8px; }
+.checkout-review span, .checkout-review > div span { color: var(--muted); font: 10px "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.checkout-review strong { color: var(--orange); font: 500 30px "Playfair Display", serif; }
+.checkout-submit { display: flex; align-items: center; justify-content: space-between; min-width: 210px; padding: 14px 16px; border: 0; background: var(--ink); color: var(--paper); cursor: pointer; font: 10px "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.checkout-submit:hover { background: var(--orange); }
+.checkout-submit span { color: #f1b08c; font-size: 17px; }
+.checkout-submit:disabled { cursor: wait; opacity: .55; }
+.checkout-error { margin: -20px 0 0; color: #a54e3b; font-size: 12px; }
+.checkout-success { max-width: 760px; margin: 0 auto; padding: 110px 7vw 160px; }
+.checkout-success > p:not(.eyebrow) { max-width: 380px; margin: 32px 0; color: var(--muted); line-height: 1.7; }
+.checkout-link { border-bottom: 1px solid var(--ink); padding-bottom: 8px; color: var(--ink); font-size: 12px; }
+.checkout-link span { margin-left: 10px; color: var(--orange); font-size: 17px; }
+.checkout-whatsapp { display: flex; align-items: center; justify-content: space-between; width: min(360px, 100%); margin-bottom: 18px; padding: 14px 16px; border: 0; background: #168c5b; color: #fff; cursor: pointer; font: 10px "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.checkout-whatsapp:hover { background: #117348; }
+.checkout-whatsapp span { color: #b9f2d5; font-size: 17px; }
+.checkout-whatsapp-instruction { margin: 18px 0 !important; color: var(--ink) !important; font-size: 13px; font-weight: 600; line-height: 1.6 !important; }
+
+@media (max-width: 760px) {
+	.checkout-shell { display: block; padding: 56px 7vw 80px; }
+	.checkout-form { margin-top: 58px; }
+	.checkout-addresses, .checkout-payments { margin-left: 0; }
+	.checkout-review { align-items: stretch; flex-direction: column; }
+	.checkout-submit { width: 100%; }
+	.checkout-success { padding: 80px 7vw 110px; }
+}

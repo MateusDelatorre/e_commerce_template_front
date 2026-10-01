@@ -1,4 +1,4 @@
-import authServiceInstance from "../../presentation/auth/auth_service";
+import authServiceInstance from "../../../presentation/auth/auth_service";
 import { apiBaseUrl } from "../api_base";
 
 export default async function updateUserData(name: string, phone: string, email: string) {

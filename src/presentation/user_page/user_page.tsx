@@ -15,11 +15,16 @@ export default function UserPage(){
 		navigateToLogin();
 	}
 
+	function handleLogout() {
+		authServiceInstance.clearToken()
+		navigateToLogin()
+	}
+
 	return (
 		<main className="account-page">
 			<MainHeader onLogin={navigateToLogin} />
 			<div className="account-layout">
-				<SidePanel currentSection={currentSection} onSectionChange={(section) => { setCurrentSection(section); setIsAddingAddress(false) }} />
+				<SidePanel currentSection={currentSection} onSectionChange={(section) => { setCurrentSection(section); setIsAddingAddress(false) }} onLogout={handleLogout} />
 				{isAddingAddress ? <AddAddressContent onBack={() => setIsAddingAddress(false)} /> : currentSection === 'user-data' ? <UserDataContent /> : currentSection === 'addresses' ? <AddressContent onAddAddress={() => setIsAddingAddress(true)} /> : <OrdersContent />}
 			</div>
 		</main>

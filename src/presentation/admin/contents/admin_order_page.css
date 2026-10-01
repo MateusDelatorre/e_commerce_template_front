@@ -1,0 +1,63 @@
+.admin-order-shell { max-width: 1120px; margin: 0 auto; padding: 42px clamp(32px, 7vw, 110px) 100px; }
+.admin-order-back { padding: 0 0 7px; border: 0; border-bottom: 1px solid var(--admin-line); background: transparent; color: var(--admin-muted); cursor: pointer; font: 10px "DM Mono", monospace; text-transform: uppercase; }
+.admin-order-back:hover { color: var(--admin-accent); }
+.admin-order-state { padding: 80px 0; color: var(--admin-muted); font-size: 13px; }
+.admin-order-state.error { color: #b14b4b; }
+.admin-order-detail { padding-top: 54px; }
+.admin-order-detail-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
+.admin-order-detail-heading h1 { margin: 18px 0 0; color: var(--admin-ink); font-size: clamp(42px, 5.5vw, 76px); line-height: 1; letter-spacing: -.06em; }
+.admin-order-detail-heading p:last-child { margin: 18px 0 0; color: var(--admin-muted); font-size: 12px; }
+.admin-order-detail-heading > .order-status { margin-bottom: 8px; }
+.admin-order-detail-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(260px, .8fr); gap: 16px; margin-top: 54px; }
+.admin-order-panel { padding: 24px; border: 1px solid var(--admin-line); border-radius: 8px; background: var(--admin-surface); }
+.admin-order-panel-title { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding-bottom: 18px; border-bottom: 1px solid var(--admin-line); }
+.admin-order-panel-title h2 { margin: 0; font-size: 18px; }
+.admin-order-panel-title span { color: var(--admin-muted); font: 10px "DM Mono", monospace; text-transform: uppercase; }
+.admin-order-items { display: grid; }
+.admin-order-item { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 17px 0; border-bottom: 1px solid var(--admin-line); }
+.admin-order-item:last-child { border-bottom: 0; padding-bottom: 0; }
+.admin-order-item:first-child { padding-top: 20px; }
+.admin-order-item > span { color: var(--admin-muted); font: 11px "DM Mono", monospace; }
+.admin-order-item strong { font-size: 13px; font-weight: 500; }
+.admin-order-item b { color: var(--admin-accent); font-size: 13px; }
+.admin-order-summary { display: grid; align-content: start; gap: 22px; }
+.admin-order-summary div { display: grid; gap: 7px; }
+.admin-order-summary span { color: var(--admin-muted); font: 9px "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.admin-order-summary strong { font-size: 13px; font-weight: 500; }
+.admin-order-address-fields { display: grid; gap: 10px; margin-top: 5px; }
+.admin-order-address-fields strong { display: grid; gap: 3px; font-size: 12px; }
+.admin-order-address-fields b { color: var(--admin-muted); font: 9px "DM Mono", monospace; letter-spacing: .06em; text-transform: uppercase; }
+.admin-order-summary div:last-child { padding-top: 18px; border-top: 1px solid var(--admin-line); }
+.admin-order-summary div:last-child strong { color: var(--admin-accent); font-size: 22px; }
+.admin-order-customer { grid-column: 1 / -1; }
+.admin-order-customer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 22px; }
+.admin-order-customer-grid div { display: grid; gap: 7px; }
+.admin-order-customer-grid span { color: var(--admin-muted); font: 9px "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.admin-order-customer-grid strong { font-size: 13px; font-weight: 500; overflow-wrap: anywhere; }
+.admin-order-actions { display: flex; justify-content: end; gap: 12px; margin-top: 24px; }
+.admin-order-actions button { padding: 12px 16px; border: 0; border-radius: 5px; cursor: pointer; font-size: 11px; }
+.admin-order-actions button:disabled { cursor: wait; opacity: .5; }
+.admin-order-cancel { background: transparent; color: #b14b4b; border: 1px solid #d9958c !important; }
+.admin-order-confirm { background: var(--admin-accent); color: #fff; }
+.admin-order-notice { margin-top: 24px; color: #278b68; font-size: 12px; }
+.admin-order-confirmation-backdrop { position: fixed; z-index: 10; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(23, 32, 43, .48); }
+.admin-order-confirmation { width: min(430px, 100%); padding: 30px; border: 1px solid var(--admin-line); border-radius: 8px; background: var(--admin-surface); box-shadow: 0 22px 60px rgba(23, 32, 43, .24); }
+.admin-order-confirmation h2 { margin: 14px 0 10px; font-size: 28px; letter-spacing: -.04em; }
+.admin-order-confirmation > p:not(.admin-kicker) { margin: 0; color: var(--admin-muted); font-size: 13px; line-height: 1.6; }
+.admin-order-confirmation-actions { display: flex; justify-content: end; gap: 10px; margin-top: 26px; }
+.admin-order-confirmation-actions button { padding: 11px 14px; border: 0; border-radius: 5px; cursor: pointer; font-size: 11px; }
+.admin-order-confirmation-actions button:disabled { cursor: wait; opacity: .5; }
+.admin-order-confirmation-actions button:first-child { background: transparent; color: var(--admin-muted); }
+.admin-order-confirmation-submit { background: var(--admin-accent); color: #fff; }
+.admin-order-confirmation-danger { background: #b14b4b; color: #fff; }
+
+@media (max-width: 760px) {
+	.admin-order-shell { padding: 30px 20px 70px; }
+	.admin-order-detail { padding-top: 40px; }
+	.admin-order-detail-heading { align-items: start; flex-direction: column; }
+	.admin-order-detail-heading > .order-status { margin: 0; }
+	.admin-order-detail-grid { grid-template-columns: 1fr; margin-top: 36px; }
+	.admin-order-customer-grid { grid-template-columns: 1fr; }
+	.admin-order-actions { justify-content: stretch; flex-direction: column-reverse; }
+	.admin-order-actions button { width: 100%; }
+}

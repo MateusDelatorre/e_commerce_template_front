@@ -1,0 +1,6 @@
+.admin-product-edit { max-width: 760px; }
+.admin-product-edit-back { padding: 0; border: 0; background: transparent; color: var(--admin-muted); font-size: 12px; }
+.admin-product-edit-back:hover { color: var(--admin-ink); }
+.admin-product-edit-heading { margin: 42px 0 28px; }
+.admin-product-edit-heading h2 { margin: 14px 0 0; font-size: clamp(38px, 5vw, 62px); line-height: 1.02; letter-spacing: -.06em; }
+.product-edit-form { width: 100%; padding: 28px 0 0; border-top: 1px solid var(--admin-line); }

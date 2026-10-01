@@ -1,0 +1,46 @@
+.bag-page { min-height: 100vh; background: var(--paper); color: var(--ink); }
+.bag-shell { max-width: 1120px; margin: 0 auto; padding: 76px 5vw 120px; }
+.bag-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding-bottom: 34px; border-bottom: 1px solid var(--line); }
+.bag-heading h1 { margin: 0; font-size: clamp(54px, 7vw, 96px); line-height: .9; }
+.bag-heading .eyebrow { margin-bottom: 18px; }
+.bag-heading > span { color: var(--muted); font: 10px "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.bag-feedback { margin: 22px 0 0; color: var(--orange); font: 11px "DM Mono", monospace; letter-spacing: .04em; }
+.bag-layout { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 70px; padding-top: 42px; }
+.bag-items { display: grid; gap: 0; }
+.bag-item { display: grid; grid-template-columns: 118px minmax(0, 1fr) auto; gap: 22px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.bag-item:first-child { padding-top: 0; }
+.bag-item-image { display: grid; aspect-ratio: 1; place-items: center; overflow: hidden; background: #eadfd5; }
+.bag-item-image img { width: 80%; height: 80%; object-fit: contain; mix-blend-mode: multiply; }
+.bag-item-image span { color: #9d6048; font: 24px "DM Mono", monospace; }
+.bag-item-info h2 { margin: 0 0 8px; font: 500 25px "Playfair Display", serif; }
+.bag-item-info a:hover h2 { color: var(--orange); }
+.bag-item-info p { margin: 0 0 14px; color: var(--muted); font: 10px "DM Mono", monospace; text-transform: uppercase; }
+.bag-item-quantity { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+.bag-item-quantity button { display: grid; width: 25px; height: 25px; place-items: center; padding: 0; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; font-size: 16px; line-height: 1; }
+.bag-item-quantity button:hover:not(:disabled) { border-color: var(--orange); color: var(--orange); }
+.bag-item-quantity button:disabled { cursor: not-allowed; opacity: .35; }
+.bag-item-quantity input { width: 42px; height: 25px; padding: 0 4px; border: 1px solid var(--line); background: transparent; color: var(--ink); text-align: center; font: 11px "DM Mono", monospace; }
+.bag-item-quantity input::-webkit-inner-spin-button, .bag-item-quantity input::-webkit-outer-spin-button { opacity: 1; }
+.bag-item-stock { display: block; margin-bottom: 12px; color: var(--muted); font-size: 10px; }
+.bag-item-info strong { color: var(--orange); font: 500 18px "Playfair Display", serif; }
+.bag-item-remove { align-self: end; padding: 0 0 5px; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--muted); cursor: pointer; font: 10px "DM Mono", monospace; text-transform: uppercase; }
+.bag-item-remove:hover { border-color: var(--orange); color: var(--orange); }
+.bag-summary { align-self: start; padding: 24px; background: var(--ink); color: var(--paper); }
+.bag-summary > span { display: block; color: #bba99e; font: 10px "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.bag-summary strong { display: block; margin-top: 14px; color: #f1b08c; font: 500 30px "Playfair Display", serif; }
+.bag-summary p { margin: 26px 0 0; color: #bba99e; font-size: 11px; line-height: 1.6; }
+.bag-checkout-button { display: flex; align-items: center; justify-content: space-between; margin-top: 26px; padding: 13px 0; border-top: 1px solid #66544b; border-bottom: 1px solid #66544b; color: var(--paper); font: 10px "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.bag-checkout-button span { color: #f1b08c; font-size: 17px; }
+.bag-empty { padding: 80px 0; border-bottom: 1px solid var(--line); }
+.bag-empty p { margin: 0 0 22px; color: var(--muted); font-size: 15px; }
+.bag-empty a { color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 7px; font-size: 12px; }
+.bag-empty a span { margin-left: 10px; color: var(--orange); font-size: 16px; }
+
+@media (max-width: 760px) {
+	.bag-shell { padding: 52px 7vw 80px; }
+	.bag-layout { display: block; padding-top: 28px; }
+	.bag-summary { margin-top: 34px; }
+	.bag-item { grid-template-columns: 84px minmax(0, 1fr); gap: 16px; }
+	.bag-item-remove { grid-column: 2; justify-self: start; }
+	.bag-item-info h2 { font-size: 21px; }
+}

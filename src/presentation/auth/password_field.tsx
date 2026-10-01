@@ -1,11 +1,11 @@
 export default function PasswordField() {
   return (
 	<>
-		<label htmlFor="password">Enter password</label>
+		<label htmlFor="password">Digite sua senha</label>
 		<span id="passwordFeedback" className="error-msg"></span>
 		<input
 			id="password"
-			placeholder="Password"
+			placeholder="Senha"
 			type="password"
 			autoComplete="current-password"
 		/>

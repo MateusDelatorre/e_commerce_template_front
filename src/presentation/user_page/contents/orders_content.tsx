@@ -1,22 +1,44 @@
-import { useState } from 'react'
-
-type Order = { number: string; product: string; status: string; purchaseDate: string; value: string }
+import { useEffect, useState } from 'react'
+import type { AdminOrder, OrderStatus } from '../../../core/model/order'
+import getMyOrders from '../../../core/usecase/orders/get_my_orders'
+import formatBrl from '../../utils/format_brl'
 
 export default function OrdersContent() {
-	const [openOrder, setOpenOrder] = useState<string | null>(null)
-	const orders: Order[] = [
-		{ number: '#SL-2048', product: 'Santal 33', status: 'In transit', purchaseDate: '12 Sep 2026', value: '$185.00' },
-		{ number: '#SL-1982', product: 'Fleur de Peau', status: 'Delivered', purchaseDate: '28 Aug 2026', value: '$142.00' },
-		{ number: '#SL-1874', product: 'Thé Noir 29', status: 'Delivered', purchaseDate: '04 Jul 2026', value: '$165.00' },
-	]
+	const [openOrder, setOpenOrder] = useState<number | null>(null)
+	const [orders, setOrders] = useState<AdminOrder[]>([])
+	const [loading, setLoading] = useState(true)
+	const [error, setError] = useState('')
+
+	useEffect(() => {
+		getMyOrders()
+			.then((result) => setOrders(result.data))
+			.catch((reason: Error) => setError(reason.message))
+			.finally(() => setLoading(false))
+	}, [])
+
 	return (
 		<section className="account-content orders-content">
-			<p className="eyebrow">Collection / 03</p><h2>Your orders</h2>
-			<p className="content-intro">A trace of every fragrance that found its way to you.</p>
-			<div className="orders-list">{orders.map((order) => <article className={openOrder === order.number ? 'order-card open' : 'order-card'} key={order.number}>
-				<button className="order-summary" onClick={() => setOpenOrder(openOrder === order.number ? null : order.number)} aria-expanded={openOrder === order.number}><span><small>{order.number}</small><strong>{order.product}</strong></span><b>{openOrder === order.number ? '−' : '+'}</b></button>
-				{openOrder === order.number && <div className="order-details"><div><small>Status</small><strong>{order.status}</strong></div><div><small>Purchase date</small><strong>{order.purchaseDate}</strong></div><div><small>Value</small><strong>{order.value}</strong></div></div>}
-			</article>)}</div>
+			<p className="eyebrow">Coleção / 03</p><h2>Seus pedidos</h2>
+			<p className="content-intro">O registro de cada fragrância que chegou até você.</p>
+			{loading && <p className="orders-state">Carregando pedidos...</p>}
+			{!loading && error && <p className="orders-state error">{error}</p>}
+			{!loading && !error && !orders.length && <p className="orders-state">Sem pedidos.</p>}
+			{!loading && !error && orders.length > 0 && <div className="orders-list">{orders.map((order) => {
+				const firstProduct = order.items[0]?.product?.name ?? 'Pedido'
+				const productLabel = order.items.length > 1 ? `${firstProduct} + ${order.items.length - 1} item(ns)` : firstProduct
+				return <article className={openOrder === order.id ? 'order-card open' : 'order-card'} key={order.id}>
+					<button className="order-summary" onClick={() => setOpenOrder(openOrder === order.id ? null : order.id)} aria-expanded={openOrder === order.id}><span><small>Pedido {order.public_reference}</small><strong>{productLabel}</strong></span><b>{openOrder === order.id ? '−' : '+'}</b></button>
+					{openOrder === order.id && <div className="order-details"><div><small>Status</small><strong>{getStatusLabel(order.status)}</strong></div><div><small>Data da compra</small><strong>{formatOrderDate(order.created_at)}</strong></div><div><small>Valor</small><strong>{formatBrl(order.total)}</strong></div></div>}
+				</article>
+			})}</div>}
 		</section>
 	)
+}
+
+function getStatusLabel(status: OrderStatus) {
+	return { pending: 'Pendente', processing: 'Em processamento', shipped: 'Enviado', delivered: 'Entregue', cancelled: 'Cancelado' }[status]
+}
+
+function formatOrderDate(value: string) {
+	return new Date(value).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })
 }

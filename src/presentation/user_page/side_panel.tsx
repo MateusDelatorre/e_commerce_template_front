@@ -3,6 +3,7 @@ export type UserPageSection = 'user-data' | 'addresses' | 'orders'
 type SidePanelProps = {
 	currentSection: UserPageSection
 	onSectionChange: (section: UserPageSection) => void
+	onLogout: () => void
 }
 
 const sections: { id: UserPageSection; label: string; number: string }[] = [
@@ -11,7 +12,7 @@ const sections: { id: UserPageSection; label: string; number: string }[] = [
 	{ id: 'orders', label: 'Meus pedidos', number: '03' },
 ]
 
-export default function SidePanel({ currentSection, onSectionChange }: SidePanelProps){
+export default function SidePanel({ currentSection, onSectionChange, onLogout }: SidePanelProps){
 	return (
 		<aside className="side-panel">
 			<div>
@@ -25,7 +26,8 @@ export default function SidePanel({ currentSection, onSectionChange }: SidePanel
 					</button>
 				))}
 			</nav>
-			<p className="side-panel-note">Curate your essentials.<br />Keep them close.</p>
+			<button className="account-logout" type="button" onClick={onLogout}>Sair da conta</button>
+			<p className="side-panel-note">Escolha seus essenciais.<br />Mantenha-os por perto.</p>
 		</aside>
 	)
 }

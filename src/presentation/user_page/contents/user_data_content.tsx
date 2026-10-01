@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import LabelInput from "../../components/label_input"
-import getUserData from "../../../api/user_endpoints/get_user_data";
+import getUserData from "../../../repository/api/user_endpoints/get_user_data";
 import UserDataContentHeader from "../components/user_data_content_header";
 
 export default function UserDataContent() {
@@ -12,7 +12,7 @@ export default function UserDataContent() {
 	useEffect(() => {
 		getUserData().then((data) => {
 			setName(data.name);
-			setPhone(data.number);
+			setPhone(data.phone);
 			setEmail(data.email);
 			setIsLoading(false);
 		});
@@ -33,29 +33,29 @@ export default function UserDataContent() {
 	}else{
 		return (
 			<section className="account-content">
-				<p className="eyebrow">Profile / 01</p><h2>Your details</h2>
-				<p className="content-intro">Keep your details current for a smoother, more personal Sillage experience.</p>
+				<p className="eyebrow">Perfil / 01</p><h2>Seus dados</h2>
+				<p className="content-intro">Mantenha seus dados atualizados para uma experiência Sillage mais fluida e pessoal.</p>
 				<form className="account-form" onSubmit={handleSubmit}>
 					<LabelInput 
-						label="Name"
+						label="Nome"
 						type="text"
 						placeholder=""
 						value={name}
 						onChange={(value) => setName(value)} />
 					<LabelInput 
-						label="Phone number"
+						label="Telefone"
 						type="text"
 						placeholder=""
 						value={phone}
 						onChange={(e) => setPhone(e)} />
 					<LabelInput 
-						label="Email"
+						label="E-mail"
 						type="text"
 						placeholder=""
 						value={email}
 						onChange={(e) => setEmail(e)} />
 					<button className="dark-button" type="submit" disabled={is_loading}>
-					{is_loading ? "Salvando..." : "Salvar Endereço"}<span>↗</span></button>
+					{is_loading ? "Salvando..." : "Salvar dados"}<span>↗</span></button>
 				</form>
 			</section>
 		)

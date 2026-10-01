@@ -60,6 +60,64 @@
   gap: 22px;
   font-size: 12px;
 }
+.header-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.search-box {
+  display: flex;
+  align-items: center;
+}
+.header-search label {
+  color: var(--muted);
+  font:
+    9px "DM Mono",
+    monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.header-search input {
+  width: 240px;
+  padding: 11px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 13px;
+}
+.header-search input::placeholder {
+  color: var(--muted);
+}
+.header-search button {
+  padding: 5px 0 5px 10px;
+  border: 0;
+  background: transparent;
+  color: var(--orange);
+  cursor: pointer;
+  font: 10px "DM Mono", monospace;
+  text-transform: uppercase;
+}
+.search-suggestions {
+  position: absolute;
+  z-index: 8;
+  top: calc(100% + 1px);
+  left: 44px;
+  width: min(360px, 75vw);
+  padding: 6px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: 0 14px 30px rgba(71, 49, 41, .12);
+}
+.search-suggestions p { margin: 10px; color: var(--muted); font-size: 11px; }
+.search-suggestion { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 14px; padding: 11px 10px; border: 0; background: transparent; color: var(--ink); text-align: left; cursor: pointer; }
+.search-suggestion:hover { background: var(--cream); }
+.search-suggestion span { display: grid; min-width: 0; gap: 4px; }
+.search-suggestion strong { overflow: hidden; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.search-suggestion small { overflow: hidden; color: var(--muted); font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.search-suggestion b { flex: 0 0 auto; color: var(--orange); font-size: 11px; font-weight: 600; }
 .icon-button,
 .login-button,
 .bag-button {
@@ -79,6 +137,19 @@
 .bag-button span {
   color: var(--orange);
   margin-left: 4px;
+}
+.bag-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.bag-icon {
+  width: 19px;
+  height: 19px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
 }
 .hero {
   min-height: 620px;
@@ -256,6 +327,10 @@ h2 {
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
+.product-card-link {
+  display: block;
+  color: inherit;
+}
 .product-image {
   position: relative;
   aspect-ratio: 1 / 1.1;
@@ -372,7 +447,7 @@ h2 {
 }
 .site-footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.5fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 30px;
   padding: 55px 5vw;
@@ -382,29 +457,6 @@ h2 {
 .site-footer p {
   color: #a99b93;
   font-size: 11px;
-}
-.footer-search label {
-  display: block;
-  color: #a99b93;
-  font:
-    9px "DM Mono",
-    monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 10px;
-}
-.footer-search input {
-  width: 100%;
-  border: 0;
-  border-bottom: 1px solid #655851;
-  outline: 0;
-  padding: 8px 0;
-  background: transparent;
-  color: white;
-  font-size: 12px;
-}
-.footer-search input::placeholder {
-  color: #84756d;
 }
 .auth-page {
   min-height: 100vh;
@@ -503,6 +555,22 @@ h2 {
 .side-panel-note {
   color: #80675d;
   font: 10px/1.7 "DM Mono", monospace;
+}
+.account-logout {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 9px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(117, 72, 56, 0.3);
+  background: transparent;
+  color: #80675d;
+  cursor: pointer;
+  font: 10px "DM Mono", monospace;
+  text-transform: uppercase;
+}
+.account-logout:hover {
+  color: var(--ink);
+  border-color: var(--orange);
 }
 .account-content {
   max-width: 760px;
@@ -624,6 +692,16 @@ h2 {
 .orders-list {
   border-top: 1px solid var(--line);
 }
+.orders-state {
+  margin-top: 42px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+.orders-state.error {
+  color: #a54e3b;
+}
 .order-card {
   border-bottom: 1px solid var(--line);
 }
@@ -680,6 +758,15 @@ h2 {
   }
   .header-actions {
     gap: 14px;
+  }
+  .header-search {
+    gap: 5px;
+  }
+  .header-search label {
+    display: none;
+  }
+  .header-search input {
+    width: 135px;
   }
   .hero {
     display: block;

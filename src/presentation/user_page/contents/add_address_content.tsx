@@ -2,7 +2,7 @@ import { useState } from "react";
 import CepInput from "../components/cep_input"
 import LabelInput from "../../components/label_input";
 import getCepInfo from "../hooks/get_cep_info";
-import NewAddressEndpoint from "../../../api/user_endpoints/address_endpoints/new_address";
+import NewAddressEndpoint from "../../../repository/api/user_endpoints/address_endpoints/new_address";
 
 export default function AddAddressContent({ onBack }: { onBack: () => void }) {
 	const [addressName, setAddressName] = useState("");

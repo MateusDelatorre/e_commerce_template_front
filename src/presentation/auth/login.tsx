@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { login } from "../../api/user"
+import { login } from "../../repository/api/user"
 import EmailField from "./email_field"
 import PasswordField from "./password_field"
-import { navigateToHome } from "../../router"
+import { navigateTo, navigateToHome } from "../../router"
 
 
-export default function LoginPage({ onBack }: { onBack: () => void }) {
+export default function LoginPage({ onBack, redirectTo }: { onBack: () => void; redirectTo?: string }) {
 	const [is_loading, setIsLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 	function handleLogin(event: React.FormEvent<HTMLFormElement>) {
@@ -19,7 +19,9 @@ export default function LoginPage({ onBack }: { onBack: () => void }) {
 		login(email, password).then((data) => {
 			console.log(data)
 			setIsLoading(false);
-			navigateToHome()
+			const destination = redirectTo ?? new URLSearchParams(window.location.search).get('redirect')
+			if (destination) navigateTo(destination)
+			else navigateToHome()
 		}).catch((error) => {
 			console.error(error)
 			setError(error.message);
@@ -28,17 +30,17 @@ export default function LoginPage({ onBack }: { onBack: () => void }) {
 	}
   return (
 	<div className="auth-page">
-		<button className="back-button" onClick={onBack}>← Back to store</button>
+		<button className="back-button" onClick={onBack}>← Voltar à loja</button>
 		<div className="auth-box">
-			<p className="eyebrow">Welcome back</p>
-			<h1>Log in to NomeDaLoja.</h1>
+			<p className="eyebrow">Que bom ver você</p>
+			<h1>Entre na NomeDaLoja.</h1>
 			<form onSubmit={handleLogin}>
 				<EmailField/>
 				<PasswordField/>
 				{is_loading ? (
-					<button className="dark-button" disabled>Loading...</button>
+					<button className="dark-button" disabled>Carregando...</button>
 				) : (
-					<button className="dark-button" type="submit">Log in <span>↗</span></button>
+					<button className="dark-button" type="submit">Entrar <span>↗</span></button>
 				)}
 			</form>
 			{error && <p className="error-msg">{error}</p>}
